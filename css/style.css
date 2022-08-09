@@ -1,0 +1,231 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: rgb(132, 127, 127);
+    height: 70px;
+    padding: 10px 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+header .header-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-content .brand {
+    font-size: 33px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.header-content nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.header-content nav li a {
+    display: block;
+    min-width: 80px;
+    padding: 5px;
+    margin: 0 5px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.header-content nav ul#userInfo {
+    display: none;
+}
+
+.header-content nav ul#userInfo li {
+    margin: 0 10px;
+    position: relative;
+}
+
+.header-content nav ul#userInfo li .shoppingCartIcon {
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.header-content nav ul#userInfo .badge {
+    position: absolute;
+    background-color: red;
+    color: #fff;
+    font-weight: 900;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    top: -5px;
+    right: -15px;
+    text-align: center;
+    display: none;
+}
+
+.header-content a:hover {
+    text-shadow: 7px 7px 20px rgba(255, 255, 255, .7), -7px -7px 20px rgba(255, 255, 255, .7);
+}
+
+/* ************************************************************** section form *********************/
+.sec-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    text-align: center;
+    background-color: green;
+    padding: 20px;
+}
+
+.sec-form form input {
+    width: 100%;
+    margin: 5px 0;
+    height: 40px;
+    padding: 0 10px;
+    outline: none;
+    border: 1px solid #bbb;
+}
+
+.sec-form form .pass-content {
+    position: relative;
+    height: 100%;
+}
+
+.sec-form .pass-content i {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 100%;
+    transform: translateY(30%);
+    font-size: 20px;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.sec-form h2 {
+    font-size: 2.7rem;
+    color: purple;
+    font-weight: 500;
+    letter-spacing: 4px;
+    text-transform: capitalize;
+}
+
+.sec-form form input[type="submit"]:hover {
+    opacity: .7;
+}
+
+/* ************************************************************** section home *********************/
+.sec-home .products {
+    width: 60%;
+    margin: 10px 0;
+    /* border: 1px solid #ddd; */
+}
+
+.sec-home .product-item {
+    width: 100%;
+    display: flex;
+    margin-bottom: -10px;
+    border: 1px solid #ddd;
+}
+
+.sec-home .product-item .product-item-img {
+    width: 25%;
+    margin-right: 10px;
+}
+
+.product-item .product-item-action {
+    flex: 1;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.product-item-action .add-to-cart {
+    display: block;
+    border: none;
+    background-color: green;
+    color: #fff;
+    padding: 5px 10px;
+    margin-left: auto;
+    text-transform: capitalize;
+}
+
+.product-item-action .fav-icon {
+    /* color: #bbb; */
+    font-size: 20px;
+    display: block;
+    width: 20px;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+/************************************************************ carts-products */
+
+.carts-products {
+    width: 250px;
+    position: absolute;
+    transform: translate(-70px, 0);
+    top: 60px;
+    padding: 10px;
+    border: 1px solid green;
+    display: none;
+}
+
+.carts-products a {
+    background-color: green;
+    text-align: center;
+}
+
+.carts-products .add-product {
+    max-height: 250px;
+    overflow-y: scroll;
+}
+
+.carts-products .add-product-item {
+    height: 60px;
+    display: flex;
+    border: 1px solid #bbb;
+    padding: 5px 10px;
+    position: relative;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+
+.carts-products .add-product-item img {
+    width: 30%;
+}
+
+.carts-products .add-product-item p {
+    line-height: 50px;
+    margin-left: 4px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* .carts-products .add-product-item span {
+    background-color: red;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+    display: none;
+} */
