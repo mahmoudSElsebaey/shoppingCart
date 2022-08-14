@@ -1,13 +1,14 @@
-let productsInCart = localStorage.getItem("productsInCart");
+// let productsInCart = localStorage.getItem("productsInCart");
 let allProducts = document.querySelector(".products");
 
-if (productsInCart) {
-  // meain ==> if productsInCart have value (true) or not have (false)
-  let item = JSON.parse(productsInCart); // turn productsInCart=(item) from type(string) into type(object)
-  drawCartProducts(item);
-}
+// if (productsInCart) {
+//   // meain ==> if productsInCart have value (true) or not have (false)
+//   let item = JSON.parse(productsInCart); // turn productsInCart=(item) from type(string) into type(object)
+//   drawCartProducts(item);
+// }
 
-function drawCartProducts(products) {
+function drawCartProducts(all_products = []) {
+  let products =JSON.parse(localStorage.getItem("productsInCart")) || all_products;
   let x = products.map(function (item) {
     return `<div class="product-item">
                     <img class="product-item-img" src="${item.imgURL}">
@@ -20,14 +21,18 @@ function drawCartProducts(products) {
                     <button class="add-to-cart" onclick="removeProductFromCart(${item.id})">remove from cart</button>
                 </div>
             </div>`;
-});
-allProducts.innerHTML = x;
+  });
+  allProducts.innerHTML = x;
 }
+drawCartProducts();
 
-// function removeProductFromCart(id) {
-// let items = JSON.parse(productsInCart);
-// let x = items.filter((item) => item.id !== id)
-// drawCartProducts(x)
-// localStorage.setItem("productsInCart" , JSON.stringify(x))
-// }
-
+// remove products
+function removeProductFromCart(id) {
+  let productsInCart = localStorage.getItem("productsInCart");
+  if (productsInCart) {
+    let items = JSON.parse(productsInCart);
+    let x = items.filter((item) => item.id !== id);
+    localStorage.setItem("productsInCart", JSON.stringify(x));
+    drawCartProducts(x);
+  }
+}
